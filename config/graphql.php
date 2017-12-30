@@ -119,7 +119,7 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-
+                'users' => 'LinkLater\GraphQL\Query\UsersQuery'
             ],
             'mutation' => [
 
