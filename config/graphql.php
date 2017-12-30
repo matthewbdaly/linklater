@@ -123,7 +123,7 @@ return [
                 'links' => 'LinkLater\GraphQL\Query\LinksQuery'
             ],
             'mutation' => [
-
+                'createLink' => 'LinkLater\GraphQL\Mutation\CreateLinkMutation'
             ]
         ]
     ],
