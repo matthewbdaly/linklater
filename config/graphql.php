@@ -144,7 +144,8 @@ return [
      * ]
      */
     'types' => [
-
+        'LinkLater\GraphQL\Type\User',
+        'LinkLater\GraphQL\Type\Link',
     ],
 
     /*
