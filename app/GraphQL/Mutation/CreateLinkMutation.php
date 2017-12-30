@@ -40,7 +40,7 @@ class CreateLinkMutation extends Mutation
             return null;
         }
         $args['user_id'] = $user->id;
-        $link = new Link($args);
+        $link = Link::create($args);
         return $link;
     }
 }
