@@ -23,6 +23,10 @@ class Link extends BaseType
             'link' => [
                 'type' => Type::string(),
                 'description' => 'The link'
+            ] ,
+            'title' => [
+                'type' => Type::string(),
+                'description' => 'The title'
             ] 
         ];
     }

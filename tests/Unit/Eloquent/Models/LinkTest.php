@@ -16,6 +16,7 @@ class LinkTest extends TestCase
         $user = factory(User::class)->create();
         $model = new Link;
         $model->link = 'http://example.com';
+        $model->title = 'Example';
         $model->user_id = $user->id;
         $model->save();
         $link = Link::first();

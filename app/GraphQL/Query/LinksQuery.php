@@ -25,6 +25,7 @@ class LinksQuery extends Query
         return [
             'id' => ['name' => 'id', 'type' => Type::string()],
             'link' => ['name' => 'link', 'type' => Type::string()],
+            'title' => ['name' => 'title', 'type' => Type::string()],
         ];
     }
 
