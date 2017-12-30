@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        LinkLater\Providers\AppServiceProvider::class,
+        LinkLater\Providers\AuthServiceProvider::class,
+        // LinkLater\Providers\BroadcastServiceProvider::class,
+        LinkLater\Providers\EventServiceProvider::class,
+        LinkLater\Providers\RouteServiceProvider::class,
 
     ],
 
