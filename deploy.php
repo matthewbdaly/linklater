@@ -16,7 +16,7 @@ add('writable_dirs', []);
 
 host('linklater.shellshocked.info')
     ->stage('production')
-    ->set('deploy_path', '/var/www/linklater');
+    ->set('deploy_path', '/var/www/linklater.shellshocked.info');
     
 // Tasks
 
