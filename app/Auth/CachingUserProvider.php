@@ -4,6 +4,7 @@ namespace LinkLater\Auth;
 
 use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Contracts\Cache\Repository;
+use Illuminate\Contracts\Hashing\Hasher as HasherContract;
 
 class CachingUserProvider extends EloquentUserProvider
 {

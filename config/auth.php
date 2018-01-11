@@ -66,7 +66,7 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'eloquent',
+            'driver' => 'caching',
             'model' => LinkLater\Eloquent\Models\User::class,
         ],
 
