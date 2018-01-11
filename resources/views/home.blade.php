@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <form class="form-horizontal" method="POST" action="/create/">
+                    <form class="form-horizontal" method="GET" action="/create/">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
                             <label for="url" class="control-label">URL</label>
