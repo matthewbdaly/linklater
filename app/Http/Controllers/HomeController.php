@@ -2,10 +2,10 @@
 
 namespace LinkLater\Http\Controllers;
 
-use Illuminate\Http\Request;
 use LinkLater\Contracts\Repositories\Link;
 use Illuminate\Contracts\Auth\Guard;
 use LinkLater\Contracts\Services\Fetcher;
+use LinkLater\Http\Requests\LinkSubmitRequest;
 
 class HomeController extends Controller
 {
@@ -35,7 +35,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(LinkSubmitRequest $request)
     {
         $title = $this->fetcher->fetch($request->get('url'));
         $link = $this->repository->create([
