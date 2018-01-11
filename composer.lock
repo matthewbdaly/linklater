@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2372813f8a055f8ef99fdb4952bf56c9",
+    "content-hash": "7813ea1325b84926e691be0b386eb5ad",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -1162,6 +1162,54 @@
                 "middleware"
             ],
             "time": "2017-11-08T22:12:49+00:00"
+        },
+        {
+            "name": "matthewbdaly/laravel-repositories",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthewbdaly/laravel-repositories.git",
+                "reference": "6ce276923f913f9200e3001b857b599c7153f1c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthewbdaly/laravel-repositories/zipball/6ce276923f913f9200e3001b857b599c7153f1c6",
+                "reference": "6ce276923f913f9200e3001b857b599c7153f1c6",
+                "shasum": ""
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.5",
+                "phpunit/phpunit": "^6.4",
+                "psy/psysh": "^0.8.14",
+                "satooshi/php-coveralls": "^1.0",
+                "squizlabs/php_codesniffer": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Matthewbdaly\\LaravelRepositories\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Daly",
+                    "email": "matthewbdaly@gmail.com"
+                }
+            ],
+            "description": "A base repository class and interface, together with a caching decorator. Extend them for use in your own projects.",
+            "keywords": [
+                "cache",
+                "caching",
+                "decorators",
+                "laravel",
+                "repositories"
+            ],
+            "time": "2017-11-24T11:08:57+00:00"
         },
         {
             "name": "monolog/monolog",

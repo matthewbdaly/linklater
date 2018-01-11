@@ -2,7 +2,7 @@
 
 namespace LinkLater\Services;
 
-use LinkLater\Contracts\Fetcher as Contract;
+use LinkLater\Contracts\Services\Fetcher as Contract;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Http\Discovery\HttpClientDiscovery;

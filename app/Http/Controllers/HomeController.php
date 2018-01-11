@@ -3,9 +3,9 @@
 namespace LinkLater\Http\Controllers;
 
 use Illuminate\Http\Request;
-use LinkLater\Eloquent\Models\Link;
+use LinkLater\Contracts\Repositories\Link;
 use Illuminate\Contracts\Auth\Guard;
-use LinkLater\Contracts\Fetcher;
+use LinkLater\Contracts\Services\Fetcher;
 
 class HomeController extends Controller
 {
@@ -14,11 +14,12 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Guard $auth, Fetcher $fetcher)
+    public function __construct(Guard $auth, Fetcher $fetcher, Link $repository)
     {
         $this->middleware('auth');
         $this->auth = $auth;
         $this->fetcher = $fetcher;
+        $this->repository = $repository;
     }
 
     /**
@@ -28,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $links = Link::forUser($this->auth)->get();
+        $links = $this->repository->forUser($this->auth);
         return view('home', [
             'links' => $links
         ]);
@@ -37,7 +38,7 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $title = $this->fetcher->fetch($request->get('url'));
-        $link = Link::create([
+        $link = $this->repository->create([
             'title' => $title,
             'link' => $request->get('url'),
             'user_id' => $this->auth->user()->id

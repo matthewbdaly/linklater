@@ -1,6 +1,6 @@
 <?php
 
-namespace LinkLater\Contracts;
+namespace LinkLater\Contracts\Services;
 
 interface Fetcher
 {
