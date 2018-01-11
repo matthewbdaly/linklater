@@ -25,6 +25,10 @@
                         </div>
                     </form>
 
+                    <p class="bookmarklet">
+                        <a href="javascript:location.href='{{ url('create') }}?url='+encodeURIComponent(location.href)">LinkLater This!</a>
+                    </p>
+
                     <ul class="list-group">
                         @foreach ($links as $link)
                         <li class="list-group-item">
