@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            'LinkLater\Contracts\Fetcher',
+            'LinkLater\Services\Fetcher'
+        );
     }
 }

@@ -5,6 +5,7 @@ namespace LinkLater\Http\Controllers;
 use Illuminate\Http\Request;
 use LinkLater\Eloquent\Models\Link;
 use Illuminate\Contracts\Auth\Guard;
+use LinkLater\Contracts\Fetcher;
 
 class HomeController extends Controller
 {
@@ -13,10 +14,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Guard $auth)
+    public function __construct(Guard $auth, Fetcher $fetcher)
     {
         $this->middleware('auth');
         $this->auth = $auth;
+        $this->fetcher = $fetcher;
     }
 
     /**
@@ -30,5 +32,16 @@ class HomeController extends Controller
         return view('home', [
             'links' => $links
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        $title = $this->fetcher->fetch($request->get('url'));
+        $link = Link::create([
+            'title' => $title,
+            'link' => $request->get('url'),
+            'user_id' => $this->auth->user()->id
+        ]);
+        return redirect()->route('home');
     }
 }

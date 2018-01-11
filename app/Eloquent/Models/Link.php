@@ -11,6 +11,12 @@ class Link extends Model
         'id' => 'string',
     ];
 
+    protected $fillable = [
+        'title',
+        'link',
+        'user_id',
+    ];
+
     protected $primaryKey = "id";
 
     public function user()
