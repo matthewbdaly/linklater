@@ -32,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
             $cachingRepo = new \LinkLater\Eloquent\Repositories\Decorators\Link($baseRepo, $this->app['cache.store']);
             return $cachingRepo;
         });
+       $this->app->singleton('LinkLater\Contracts\Repositories\User', function () {
+            $baseRepo = new \LinkLater\Eloquent\Repositories\User(new \LinkLater\Eloquent\Models\User);
+            $cachingRepo = new \LinkLater\Eloquent\Repositories\Decorators\User($baseRepo, $this->app['cache.store']);
+            return $cachingRepo;
+        });
     }
 }
