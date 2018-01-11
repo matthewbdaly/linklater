@@ -14,7 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <ul class="list-group">
+                        @foreach ($links as $link)
+                        <li class="list-group-item">
+                            <a href="{{ $link->link }}" target="_blank">{{ $link->title }}</a>
+                        </li>
+                        @endforeach
+                    </ul>
+
                 </div>
             </div>
         </div>

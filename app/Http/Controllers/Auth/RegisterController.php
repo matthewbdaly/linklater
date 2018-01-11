@@ -2,7 +2,7 @@
 
 namespace LinkLater\Http\Controllers\Auth;
 
-use LinkLater\User;
+use LinkLater\Eloquent\Models\User;
 use LinkLater\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;

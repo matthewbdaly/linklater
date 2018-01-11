@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => LinkLater\User::class,
+        'model' => LinkLater\Eloquent\Models\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

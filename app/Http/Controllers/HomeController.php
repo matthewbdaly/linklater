@@ -3,6 +3,8 @@
 namespace LinkLater\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LinkLater\Eloquent\Models\Link;
+use Illuminate\Contracts\Auth\Guard;
 
 class HomeController extends Controller
 {
@@ -11,9 +13,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Guard $auth)
     {
         $this->middleware('auth');
+        $this->auth = $auth;
     }
 
     /**
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $links = Link::forUser($this->auth)->get();
+        return view('home', [
+            'links' => $links
+        ]);
     }
 }
