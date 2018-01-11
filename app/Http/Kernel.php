@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \LinkLater\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \LinkLater\Http\Middleware\TrustProxies::class,
+        \Matthewbdaly\ETagMiddleware\ETag::class,
     ];
 
     /**
