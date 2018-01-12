@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7813ea1325b84926e691be0b386eb5ad",
+    "content-hash": "e1bc75ac331b162a2b56eda9162880a1",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -1486,6 +1486,67 @@
             "time": "2017-09-27T21:40:39+00:00"
         },
         {
+            "name": "php-http/client-common",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/client-common.git",
+                "reference": "9accb4a082eb06403747c0ffd444112eda41a0fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/client-common/zipball/9accb4a082eb06403747c0ffd444112eda41a0fd",
+                "reference": "9accb4a082eb06403747c0ffd444112eda41a0fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 || ^7.0",
+                "php-http/httplug": "^1.1",
+                "php-http/message": "^1.6",
+                "php-http/message-factory": "^1.0",
+                "symfony/options-resolver": "^2.6 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "guzzlehttp/psr7": "^1.4",
+                "phpspec/phpspec": "^2.5 || ^3.4 || ^4.2"
+            },
+            "suggest": {
+                "php-http/cache-plugin": "PSR-6 Cache plugin",
+                "php-http/logger-plugin": "PSR-3 Logger plugin",
+                "php-http/stopwatch-plugin": "Symfony Stopwatch plugin"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Client\\Common\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "Common HTTP Client implementations and tools for HTTPlug",
+            "homepage": "http://httplug.io",
+            "keywords": [
+                "client",
+                "common",
+                "http",
+                "httplug"
+            ],
+            "time": "2017-11-30T11:06:59+00:00"
+        },
+        {
             "name": "php-http/discovery",
             "version": "1.3.0",
             "source": {
@@ -2721,6 +2782,60 @@
             "time": "2018-01-05T08:33:00+00:00"
         },
         {
+            "name": "symfony/options-resolver",
+            "version": "v3.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/options-resolver.git",
+                "reference": "f31f4d3ce4eaf7597abc41bd5ba53d634c2fdb0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/f31f4d3ce4eaf7597abc41bd5ba53d634c2fdb0e",
+                "reference": "f31f4d3ce4eaf7597abc41bd5ba53d634c2fdb0e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\OptionsResolver\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony OptionsResolver Component",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "config",
+                "configuration",
+                "options"
+            ],
+            "time": "2018-01-03T07:37:34+00:00"
+        },
+        {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.6.0",
             "source": {
@@ -3730,67 +3845,6 @@
             ],
             "description": "Library for handling version information and constraints",
             "time": "2017-03-05T17:38:23+00:00"
-        },
-        {
-            "name": "php-http/client-common",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-http/client-common.git",
-                "reference": "9accb4a082eb06403747c0ffd444112eda41a0fd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-http/client-common/zipball/9accb4a082eb06403747c0ffd444112eda41a0fd",
-                "reference": "9accb4a082eb06403747c0ffd444112eda41a0fd",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.4 || ^7.0",
-                "php-http/httplug": "^1.1",
-                "php-http/message": "^1.6",
-                "php-http/message-factory": "^1.0",
-                "symfony/options-resolver": "^2.6 || ^3.0 || ^4.0"
-            },
-            "require-dev": {
-                "guzzlehttp/psr7": "^1.4",
-                "phpspec/phpspec": "^2.5 || ^3.4 || ^4.2"
-            },
-            "suggest": {
-                "php-http/cache-plugin": "PSR-6 Cache plugin",
-                "php-http/logger-plugin": "PSR-3 Logger plugin",
-                "php-http/stopwatch-plugin": "Symfony Stopwatch plugin"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Http\\Client\\Common\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com"
-                }
-            ],
-            "description": "Common HTTP Client implementations and tools for HTTPlug",
-            "homepage": "http://httplug.io",
-            "keywords": [
-                "client",
-                "common",
-                "http",
-                "httplug"
-            ],
-            "time": "2017-11-30T11:06:59+00:00"
         },
         {
             "name": "php-http/mock-client",
@@ -5017,60 +5071,6 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-10-03T07:35:21+00:00"
-        },
-        {
-            "name": "symfony/options-resolver",
-            "version": "v3.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "f31f4d3ce4eaf7597abc41bd5ba53d634c2fdb0e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/f31f4d3ce4eaf7597abc41bd5ba53d634c2fdb0e",
-                "reference": "f31f4d3ce4eaf7597abc41bd5ba53d634c2fdb0e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9|>=7.0.8"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\OptionsResolver\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony OptionsResolver Component",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "config",
-                "configuration",
-                "options"
-            ],
-            "time": "2018-01-03T07:37:34+00:00"
         },
         {
             "name": "theseer/tokenizer",

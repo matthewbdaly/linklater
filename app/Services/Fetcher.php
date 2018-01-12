@@ -7,12 +7,19 @@ use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
+use Http\Client\Common\PluginClient;
+use Http\Client\Common\Plugin\RedirectPlugin;
 
 class Fetcher implements Contract
 {
     public function __construct(HttpClient $client = null, MessageFactory $messageFactory = null)
     {
-        $this->client = $client ?: HttpClientDiscovery::find();
+        $client = $client ?: HttpClientDiscovery::find();
+        $pluginClient = new PluginClient(
+            $client,
+            [new RedirectPlugin()]
+        );
+        $this->client = $pluginClient;
         $this->messageFactory = $messageFactory ?: MessageFactoryDiscovery::find();
     }
 

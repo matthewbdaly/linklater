@@ -13,6 +13,7 @@
         "laravel/tinker": "~1.0",
         "matthewbdaly/laravel-etag-middleware": "^1.0",
         "matthewbdaly/laravel-repositories": "^1.0",
+        "php-http/client-common": "^1.7",
         "php-http/client-implementation": "^1.0",
         "php-http/discovery": "^1.0",
         "php-http/guzzle6-adapter": "^1.1",
