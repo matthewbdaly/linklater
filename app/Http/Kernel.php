@@ -58,5 +58,7 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \LinkLater\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'admin' => \Matthewbdaly\LaravelAdmin\Http\Middleware\Admin::class,
+        'admin_model_exists' => \Matthewbdaly\LaravelAdmin\Http\Middleware\AdminModelExists::class,
     ];
 }
