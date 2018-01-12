@@ -26,7 +26,7 @@
 
                         <div class="form-group">
                             <input id="linkfilter" placeholder="Filter links...">
-                            <button id="clear">Clear filter</button>
+                            <button id="clear" class="btn btn-primary">Clear filter</button>
                         </div>
                     </form>
 
@@ -34,7 +34,7 @@
                         <a href="javascript:location.href='{{ url('create') }}?url='+encodeURIComponent(location.href)">LinkLater This!</a>
                     </p>
 
-                    <ul class="list-group">
+                    <ul id="links" class="list-group">
                         @foreach ($links as $link)
                         <li class="list-group-item">
                             <a href="{{ $link->link }}" target="_blank">{{ $link->title }}</a>
