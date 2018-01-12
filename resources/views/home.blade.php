@@ -23,6 +23,11 @@
                                 Submit
                             </button>
                         </div>
+
+                        <div class="form-group">
+                            <input id="linkfilter" placeholder="Filter links...">
+                            <button id="clear">Clear filter</button>
+                        </div>
                     </form>
 
                     <p class="bookmarklet">
