@@ -7,3 +7,18 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+p.bookmarklet {
+    display: inline-block;
+    border: 1px solid lightgray;
+
+    a {
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
