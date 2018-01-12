@@ -5,8 +5,9 @@ namespace LinkLater\Eloquent\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use LinkLater\Events\UserAmended;
+use Matthewbdaly\LaravelAdmin\Contracts\Adminable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Adminable
 {
     use Notifiable;
 
@@ -39,4 +40,9 @@ class User extends Authenticatable
         'deleted' => UserAmended::class,
         'restored' => UserAmended::class,
     ];
+
+    public function isAdmin()
+    {
+        return $this->admin == true;
+    }
 }
