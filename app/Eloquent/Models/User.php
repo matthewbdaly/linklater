@@ -4,6 +4,7 @@ namespace LinkLater\Eloquent\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use LinkLater\Events\UserAmended;
 
 class User extends Authenticatable
 {
@@ -32,4 +33,10 @@ class User extends Authenticatable
     ];
 
     protected $primaryKey = "id";
+
+    protected $dispatchesEvents = [
+        'saved' => UserAmended::class,
+        'deleted' => UserAmended::class,
+        'restored' => UserAmended::class,
+    ];
 }

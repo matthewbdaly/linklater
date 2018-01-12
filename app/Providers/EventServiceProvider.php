@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'LinkLater\Events\Event' => [
-            'LinkLater\Listeners\EventListener',
+        'LinkLater\Events\UserAmended' => [
+            'LinkLater\Listeners\ClearUserId',
         ],
     ];
 
