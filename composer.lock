@@ -1466,12 +1466,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthewbdaly/laravel-admin.git",
-                "reference": "dba4518c154c601837c6f03b54c7281f37706de3"
+                "reference": "7f5a53a7829398ac83af3bec91af2e2b7f4240f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthewbdaly/laravel-admin/zipball/dba4518c154c601837c6f03b54c7281f37706de3",
-                "reference": "dba4518c154c601837c6f03b54c7281f37706de3",
+                "url": "https://api.github.com/repos/matthewbdaly/laravel-admin/zipball/7f5a53a7829398ac83af3bec91af2e2b7f4240f5",
+                "reference": "7f5a53a7829398ac83af3bec91af2e2b7f4240f5",
                 "shasum": ""
             },
             "require": {
@@ -1515,7 +1515,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2018-01-11T15:15:17+00:00"
+            "time": "2018-01-12T20:34:53+00:00"
         },
         {
             "name": "matthewbdaly/laravel-etag-middleware",
