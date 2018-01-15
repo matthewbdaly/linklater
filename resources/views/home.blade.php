@@ -14,18 +14,18 @@
                         </div>
                     @endif
 
-                    <form class="form-horizontal" method="GET" action="/create/">
+                    <form method="GET" action="/create/">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
                             <label for="url" class="control-label">URL</label>
-                            <input type="url" name="url" placeholder="Page to save" required autocomplete="off">
+                            <input type="url" name="url" placeholder="Page to save" class="form-control" required autocomplete="off">
                             <button type="submit" class="btn btn-primary">
                                 Submit
                             </button>
                         </div>
 
                         <div class="form-group">
-                            <input id="linkfilter" placeholder="Filter links...">
+                            <input id="linkfilter" placeholder="Filter links..." class="form-control">
                             <button id="clear" class="btn btn-primary">Clear filter</button>
                         </div>
                     </form>
