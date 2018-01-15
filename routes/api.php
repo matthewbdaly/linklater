@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::group([
 
     'middleware' => 'api',
-    'namespace' => 'LinkLater\Http\Controllers',
+    'namespace' => '\LinkLater\Http\Controllers',
     'prefix' => 'auth'
 
 ], function ($router) {
