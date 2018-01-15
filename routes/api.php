@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 Route::group([
 
-    'middleware' => 'api',
+    'middleware' => ['api', 'auth:api'],
     'prefix' => 'auth'
 
 ], function ($router) {
