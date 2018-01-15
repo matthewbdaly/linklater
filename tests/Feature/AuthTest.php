@@ -8,6 +8,8 @@ use LinkLater\Eloquent\Models\User;
 
 class AuthTest extends BrowserTestCase
 {
+    use RefreshDatabase;
+
     /**
      * Test login
      *
@@ -23,4 +25,22 @@ class AuthTest extends BrowserTestCase
             ->press('Login')
             ->seePageIs('/home');
     }
+
+    /**
+     * Test registration
+     *
+     * @return void
+     */
+    public function testRegistration()
+    {
+        $this->visit('/')
+            ->click('Register')
+            ->type('bob@example.com', 'email')
+            ->type('Bob Smith', 'name')
+            ->type('secret', 'password')
+            ->type('secret', 'password_confirmation')
+            ->press('Register')
+            ->seePageIs('/home');
+    }
+
 }
