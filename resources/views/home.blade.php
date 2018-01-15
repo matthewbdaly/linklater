@@ -18,7 +18,7 @@
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
                             <label for="url" class="control-label">URL</label>
-                            <input type="url" name="url" placeholder="Page to save" required>
+                            <input type="url" name="url" placeholder="Page to save" required autocomplete="off">
                             <button type="submit" class="btn btn-primary">
                                 Submit
                             </button>
