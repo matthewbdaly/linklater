@@ -60,5 +60,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'admin' => \Matthewbdaly\LaravelAdmin\Http\Middleware\Admin::class,
         'admin_model_exists' => \Matthewbdaly\LaravelAdmin\Http\Middleware\AdminModelExists::class,
+        'jwt.auth' => 'Tymon\JWTAuth\Http\Middleware\Authenticate',
+        'jwt.refresh' => 'Tymon\JWTAuth\Http\Middleware\RefreshToken',
     ];
 }
