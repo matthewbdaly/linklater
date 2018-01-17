@@ -7,6 +7,7 @@ use LinkLater\Eloquent\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 use Hash;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -71,6 +72,9 @@ class LoginController extends Controller
                 'password' => Hash::make(str_random(20)),
             ]);
         }
+
+        // Log user in
+        Auth::login($found_user);
 
         // Redirect back to home page
         return redirect('/home');
