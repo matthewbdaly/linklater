@@ -74,7 +74,7 @@ class LoginController extends Controller
         }
 
         // Log user in
-        Auth::login($found_user);
+        Auth::login($foundUser);
 
         // Redirect back to home page
         return redirect('/home');
