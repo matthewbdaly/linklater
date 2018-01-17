@@ -3,8 +3,10 @@
 namespace LinkLater\Http\Controllers\Auth;
 
 use LinkLater\Http\Controllers\Controller;
+use LinkLater\Eloquent\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
+use Hash;
 
 class LoginController extends Controller
 {
@@ -57,7 +59,20 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('github')->user();
 
-        // $user->token;
-        return $user;
+        // Create or fetch user
+        $foundUser = User::where([
+            'name' => $user->name,
+            'email' => $user->email
+        ]);
+        if (!$foundUser) {
+            $foundUser = User::create([
+                'name' => $user->name,
+                'email' => $user->email,
+                'password' => Hash::make(str_random(20)),
+            ]);
+        }
+
+        // Redirect back to home page
+        return redirect('/home');
     }
 }
