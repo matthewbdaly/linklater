@@ -64,7 +64,7 @@ class LoginController extends Controller
         $foundUser = User::where([
             'name' => $user->name,
             'email' => $user->email
-        ]);
+        ])->first();
         if (!$foundUser) {
             $foundUser = User::create([
                 'name' => $user->name,
