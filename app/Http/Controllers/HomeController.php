@@ -22,6 +22,11 @@ class HomeController extends Controller
         $this->repository = $repository;
     }
 
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
     /**
      * Show the application dashboard.
      *
