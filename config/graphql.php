@@ -53,7 +53,7 @@ return [
     /*
      * Any middleware for the 'graphql' route group
      */
-    'middleware' => ['auth'],
+    'middleware' => ['web', 'auth'],
 
     /**
      * Any middleware for a specific 'graphql' schema
@@ -80,7 +80,7 @@ return [
     'graphiql' => [
         'routes' => '/graphiql/{graphql_schema?}',
         'controller' => \Folklore\GraphQL\GraphQLController::class.'@graphiql',
-        'middleware' => ['auth'],
+        'middleware' => ['web', 'auth'],
         'view' => 'graphql::graphiql',
         'composer' => \Folklore\GraphQL\View\GraphiQLComposer::class,
     ],
