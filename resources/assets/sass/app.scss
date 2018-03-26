@@ -1,6 +1,7 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,600");
 
 // Variables
 @import "variables";
@@ -25,4 +26,8 @@ p.bookmarklet {
 
 ul#links li.alternate {
     background-color: #efefef;
+}
+
+.jumbotron h1 {
+    font-family: Oswald;
 }
