@@ -31,3 +31,16 @@ ul#links li.alternate {
 .jumbotron h1 {
     font-family: Oswald;
 }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #c0c0c0;
+    width: 100%;
+
+    p {
+        padding: 10px;
+        text-align: center;
+    }
+}

@@ -74,6 +74,14 @@
         @yield('content')
     </div>
 
+    <footer>
+        <div class="container">
+            <div class="col-md-12">
+                <p>Copyright &copy; Matthew Daly 2018</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
