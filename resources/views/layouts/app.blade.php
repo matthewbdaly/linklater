@@ -77,7 +77,7 @@
     <footer>
         <div class="container">
             <div class="col-md-12">
-                <p>Copyright &copy; Matthew Daly 2018</p>
+                <p>Copyright &copy; Matthew Daly 2018. Photo by Anete Lūsiņa on Unsplash</p>
             </div>
         </div>
     </footer>
