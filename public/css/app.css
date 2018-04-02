@@ -8350,6 +8350,11 @@ button.close {
   }
 }
 
+#app {
+  background-image: url("/images/anete-lusina-609858-unsplash.jpg");
+  height: 100vh;
+}
+
 p.bookmarklet {
   display: inline-block;
   border: 1px solid lightgray;
