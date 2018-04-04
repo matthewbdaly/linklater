@@ -23,7 +23,7 @@ class AuthTest extends BrowserTestCase
             ->type($user->email, 'email')
             ->type('secret', 'password')
             ->press('Login')
-            ->seePageIs('/home');
+            ->seePageIs('/');
     }
 
     /**
