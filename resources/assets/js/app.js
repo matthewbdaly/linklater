@@ -13,4 +13,12 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./components/Example');
+import LinkList from './components/LinkList';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+let items = [];
+
+if (document.getElementById('list')) {
+    ReactDOM.render(<LinkList items={items} />, document.getElementById('list'));
+}

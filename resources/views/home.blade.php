@@ -33,14 +33,8 @@
                     <p class="bookmarklet">
                         <a href="javascript:location.href='{{ url('create') }}?url='+encodeURIComponent(location.href)">LinkLater This!</a>
                     </p>
-
-                    <ul id="links" class="list-group">
-                        @foreach ($links as $link)
-                        <li class="list-group-item">
-                            <a href="{{ $link->link }}" target="_blank">{{ $link->title }}</a>
-                        </li>
-                        @endforeach
-                    </ul>
+                    
+                    <div id="list"></div>
 
                 </div>
             </div>
