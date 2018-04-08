@@ -74,15 +74,15 @@
         </nav>
 
         @yield('content')
-    </div>
 
-    <footer>
-        <div class="container">
-            <div class="col-md-12">
-                <p>Copyright &copy; Matthew Daly 2018. Photo by Anete Lūsiņa on Unsplash</p>
+        <footer>
+            <div class="container">
+                <div class="col-md-12">
+                    <p>Copyright &copy; Matthew Daly 2018. Photo by Anete Lūsiņa on Unsplash</p>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
