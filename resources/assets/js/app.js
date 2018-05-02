@@ -16,9 +16,23 @@ require('./bootstrap');
 import LinkList from './components/LinkList';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Container} from './container';
+import {createStore} from 'redux';
+import reducer from './reducer';
+import {Provider} from 'react-redux';
+import {fromJS} from 'immutable';
 
-let items = [];
+const store = createStore(
+    reducer,
+    fromJS(window.initialData),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 if (document.getElementById('list')) {
-    ReactDOM.render(<LinkList items={items} />, document.getElementById('list'));
+    ReactDOM.render(
+        <Provider store={store}>
+            <Container />
+        </Provider>,
+        document.getElementById('list')
+    );
 }
