@@ -57867,7 +57867,7 @@ var LinkListItem = function (_Component) {
                 { className: 'list-group-item' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'a',
-                    { href: '{ this.props.link }', target: '_blank' },
+                    { href: this.props.link, target: '_blank' },
                     this.props.title
                 )
             );
