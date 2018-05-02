@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<script type="text/javascript">
+window.initialData = {
+    links: {!! $links->toJson() !!}
+};
+</script>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
