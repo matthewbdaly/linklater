@@ -11630,8 +11630,8 @@ var LinkList = function (_Component) {
     _createClass(LinkList, [{
         key: 'render',
         value: function render() {
-            var itemNodes = this.props.items.map(function (item) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LinkListItem__["a" /* default */], { link: item.link, title: item.title });
+            var itemNodes = this.props.links.map(function (item) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LinkListItem__["a" /* default */], { key: item.id, link: item.link, title: item.title });
             });
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'ul',
@@ -57864,7 +57864,7 @@ var LinkListItem = function (_Component) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'li',
-                { 'class': 'list-group-item' },
+                { className: 'list-group-item' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'a',
                     { href: '{ this.props.link }', target: '_blank' },
@@ -59192,7 +59192,7 @@ var Layout = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LinkList__["a" /* default */], null)
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LinkList__["a" /* default */], this.props)
             );
         }
     }]);

@@ -6,7 +6,7 @@ export default class Layout extends Component {
     render() {
         return (
             <div>
-                <LinkList />
+                <LinkList {...this.props} />
             </div>
         );
     }
