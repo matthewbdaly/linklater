@@ -3,7 +3,8 @@
 @section('content')
 <script type="text/javascript">
 window.initialData = {
-    links: {!! $links->toJson() !!}
+    links: {!! $links->toJson() !!},
+    createUrl: '{{ url('create') }}'
 };
 </script>
 <div class="container">
@@ -19,13 +20,6 @@ window.initialData = {
                         </div>
                     @endif
 
-                    <form method="GET" action="/create/">
-                    </form>
-
-                    <p class="bookmarklet">
-                        <a href="javascript:location.href='{{ url('create') }}?url='+encodeURIComponent(location.href)">LinkLater This!</a>
-                    </p>
-                    
                     <div id="list"></div>
 
                 </div>
