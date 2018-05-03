@@ -20,10 +20,6 @@ window.initialData = {
                     @endif
 
                     <form method="GET" action="/create/">
-                        <div class="form-group">
-                            <input id="linkfilter" placeholder="Filter links..." class="form-control">
-                            <button id="clear" class="btn btn-primary">Clear filter</button>
-                        </div>
                     </form>
 
                     <p class="bookmarklet">
