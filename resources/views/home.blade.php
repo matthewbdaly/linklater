@@ -20,15 +20,6 @@ window.initialData = {
                     @endif
 
                     <form method="GET" action="/create/">
-                        {{ csrf_field() }}
-                        <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
-                            <label for="url" class="control-label">URL</label>
-                            <input type="url" name="url" placeholder="Page to save" class="form-control" required autocomplete="off">
-                            <button type="submit" class="btn btn-primary">
-                                Submit
-                            </button>
-                        </div>
-
                         <div class="form-group">
                             <input id="linkfilter" placeholder="Filter links..." class="form-control">
                             <button id="clear" class="btn btn-primary">Clear filter</button>
