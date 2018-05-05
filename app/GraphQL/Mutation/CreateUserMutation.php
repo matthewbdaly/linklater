@@ -31,6 +31,15 @@ class CreateUserMutation extends Mutation
         ];
     }
 
+    public function rules()
+    {
+        return [
+            'email' => ['required', 'email'],
+            'name' => ['required', 'string'],
+            'password' => ['required', 'string', 'confirmed'],
+        ];
+    }
+
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
         if ($user = User::where('email', $args['email'])->first()) {
