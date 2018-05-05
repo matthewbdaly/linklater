@@ -6,7 +6,7 @@ use Folklore\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
-use LinkLater\Eloquent\Models\Link;
+use LinkLater\Contracts\Repositories\Link;
 use Illuminate\Contracts\Auth\Guard;
 
 class CreateLinkMutation extends Mutation
@@ -16,9 +16,10 @@ class CreateLinkMutation extends Mutation
         'description' => 'Create a link'
     ];
 
-    public function __construct(Guard $auth)
+    public function __construct(Guard $auth, Link $repository)
     {
         $this->auth = $auth;
+        $this->repository = $repository;
     }
 
     public function type()
@@ -48,7 +49,7 @@ class CreateLinkMutation extends Mutation
             return null;
         }
         $args['user_id'] = $user->id;
-        $link = Link::create($args);
+        $link = $this->repository->create($args);
         return $link;
     }
 }

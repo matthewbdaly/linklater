@@ -6,15 +6,21 @@ use Folklore\GraphQL\Support\Mutation;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
-use LinkLater\Eloquent\Models\User;
+use LinkLater\Contracts\Repositories\User;
 use Hash;
 
 class CreateUserMutation extends Mutation
 {
+
     protected $attributes = [
         'name' => 'CreateUserMutation',
         'description' => 'Create a user'
     ];
+
+    public function __construct(User $repository)
+    {
+        $this->repository = $repository;
+    }
 
     public function type()
     {
@@ -49,7 +55,7 @@ class CreateUserMutation extends Mutation
         }
         $args['password'] = Hash::make($args['password']);
         unset($args['password_confirmation']);
-        $user = User::create($args);
+        $user = $this->repository->create($args);
         return $user;
     }
 }
