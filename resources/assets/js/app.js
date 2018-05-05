@@ -21,7 +21,20 @@ import {createStore} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
 import {fromJS} from 'immutable';
+import ApolloClient from 'apollo-boost';
+import gql from 'graphql-tag';
 
+const client = new ApolloClient({
+    uri: window.graphql_route
+});
+client.query({
+    query: gql`{
+        links {
+            id
+            title
+            link
+        }}`
+}).then(result => console.log(result));
 const store = createStore(
     reducer,
     fromJS(window.initialData),
