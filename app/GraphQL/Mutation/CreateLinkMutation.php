@@ -34,6 +34,14 @@ class CreateLinkMutation extends Mutation
         ];
     }
 
+    public function rules()
+    {
+        return [
+            'link' => ['required', 'url'],
+            'title' => ['required', 'string'],
+        ];
+    }
+
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
         if (!$user = $this->auth->user()) {
