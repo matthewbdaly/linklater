@@ -19520,7 +19520,8 @@ __webpack_require__(134);
 
 
 var httpLink = Object(__WEBPACK_IMPORTED_MODULE_10_apollo_link_http__["createHttpLink"])({
-    uri: window.initialData.graphql_route
+    uri: window.initialData.graphql_route,
+    credentials: 'same-origin'
 });
 
 var client = new __WEBPACK_IMPORTED_MODULE_8_apollo_boost___default.a({
