@@ -60097,7 +60097,7 @@ var Layout = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'form',
                     null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__LinkInput__["a" /* default */], null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__LinkInput__["a" /* default */], this.props),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Bookmarklet__["a" /* default */], this.props),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LinkFilter__["a" /* default */], null),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LinkList__["a" /* default */], this.props)
@@ -60140,10 +60140,24 @@ var LinkInput = function (_Component) {
         var _this = _possibleConstructorReturn(this, (LinkInput.__proto__ || Object.getPrototypeOf(LinkInput)).call(this, props));
 
         _this.inputRef = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createRef();
+        _this.submitLink = _this.submitLink.bind(_this);
         return _this;
     }
 
     _createClass(LinkInput, [{
+        key: 'submitLink',
+        value: function submitLink(e) {
+            e.preventDefault();
+            var link = this.inputRef.current.value.trim();
+            if (link) {
+                this.props.addLink({
+                    link: link,
+                    title: 'New Link'
+                });
+                this.inputRef.current.value = '';
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -60157,7 +60171,7 @@ var LinkInput = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'url', name: 'url', placeholder: 'Page to save', className: 'form-control', required: true, autoComplete: 'off', ref: this.inputRef }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'button',
-                    { type: 'submit', className: 'btn btn-primary' },
+                    { type: 'submit', className: 'btn btn-primary', onClick: this.submitLink },
                     'Submit'
                 )
             );
