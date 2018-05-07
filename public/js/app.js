@@ -19487,10 +19487,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_graphql_tag__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_graphql_tag__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_apollo_link_http__ = __webpack_require__(298);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_apollo_link_context__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_apollo_cache_inmemory__ = __webpack_require__(121);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_apollo_cache_inmemory__ = __webpack_require__(121);
 var _templateObject = _taggedTemplateLiteral(['{\n        links {\n            id\n            title\n            link\n        }}'], ['{\n        links {\n            id\n            title\n            link\n        }}']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -19522,26 +19519,13 @@ __webpack_require__(134);
 
 
 
-
 var httpLink = Object(__WEBPACK_IMPORTED_MODULE_10_apollo_link_http__["createHttpLink"])({
     uri: window.initialData.graphql_route
 });
 
-var authLink = Object(__WEBPACK_IMPORTED_MODULE_11_apollo_link_context__["a" /* setContext */])(function (_, _ref) {
-    var headers = _ref.headers;
-
-    var token = window.initialData.jwt;
-    // return the headers to the context so httpLink can read them
-    return {
-        headers: _extends({}, headers, {
-            authorization: token ? 'Bearer ' + token : ""
-        })
-    };
-});
-
 var client = new __WEBPACK_IMPORTED_MODULE_8_apollo_boost___default.a({
-    link: authLink.concat(httpLink),
-    cache: new __WEBPACK_IMPORTED_MODULE_12_apollo_cache_inmemory__["InMemoryCache"]()
+    link: httpLink,
+    cache: new __WEBPACK_IMPORTED_MODULE_11_apollo_cache_inmemory__["InMemoryCache"]()
 });
 
 client.query({
@@ -70212,58 +70196,6 @@ var DirectiveLocation = exports.DirectiveLocation = Object.freeze({
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */,
-/* 325 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return setContext; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_link__ = __webpack_require__(14);
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-
-var setContext = function (setter) {
-    return new __WEBPACK_IMPORTED_MODULE_0_apollo_link__["ApolloLink"](function (operation, forward) {
-        var request = __rest(operation, []);
-        return new __WEBPACK_IMPORTED_MODULE_0_apollo_link__["Observable"](function (observer) {
-            var handle;
-            Promise.resolve(request)
-                .then(function (req) { return setter(req, operation.getContext()); })
-                .then(operation.setContext)
-                .then(function () {
-                handle = forward(operation).subscribe({
-                    next: observer.next.bind(observer),
-                    error: observer.error.bind(observer),
-                    complete: observer.complete.bind(observer),
-                });
-            })
-                .catch(observer.error.bind(observer));
-            return function () {
-                if (handle)
-                    handle.unsubscribe();
-            };
-        });
-    });
-};
-//# sourceMappingURL=index.js.map
 
 /***/ })
 /******/ ]);
