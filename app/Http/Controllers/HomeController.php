@@ -6,6 +6,7 @@ use LinkLater\Contracts\Repositories\Link;
 use Illuminate\Contracts\Auth\Guard;
 use LinkLater\Contracts\Services\Fetcher;
 use LinkLater\Http\Requests\LinkSubmitRequest;
+use Tymon\JWTAuth\JWTAuth;
 
 class HomeController extends Controller
 {
@@ -14,10 +15,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Guard $auth, Fetcher $fetcher, Link $repository)
+    public function __construct(Guard $auth, JWTAuth $jwt, Fetcher $fetcher, Link $repository)
     {
         $this->middleware('auth');
         $this->auth = $auth;
+        $this->jwt = $jwt;
         $this->fetcher = $fetcher;
         $this->repository = $repository;
     }
@@ -35,8 +37,10 @@ class HomeController extends Controller
     public function index()
     {
         $links = $this->repository->forUser($this->auth);
+        $jwt = $this->jwt->fromUser($this->auth->user());
         return view('home', [
-            'links' => $links
+            'links' => $links,
+            'jwt' => $jwt
         ]);
     }
 

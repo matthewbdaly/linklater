@@ -4,7 +4,8 @@
 <script type="text/javascript">
 window.initialData = {
     links: {!! $links->toJson() !!},
-    createUrl: '{{ url('create') }}'
+    createUrl: '{{ url('create') }}',
+    jwt: '{{ $jwt }}'
 };
 window.graphql_route = "{{ config('app.url') }}/{{ config('graphql.prefix') }}";
 </script>
