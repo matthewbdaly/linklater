@@ -19518,11 +19518,13 @@ __webpack_require__(134);
 var client = new __WEBPACK_IMPORTED_MODULE_8_apollo_boost___default.a({
     uri: window.initialData.graphql_route
 });
+
 client.query({
     query: __WEBPACK_IMPORTED_MODULE_9_graphql_tag___default()(_templateObject)
 }).then(function (result) {
     return console.log(result);
 });
+
 var store = Object(__WEBPACK_IMPORTED_MODULE_4_redux__["b" /* createStore */])(__WEBPACK_IMPORTED_MODULE_5__reducer__["a" /* default */], Object(__WEBPACK_IMPORTED_MODULE_7_immutable__["fromJS"])(window.initialData), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 if (document.getElementById('list')) {

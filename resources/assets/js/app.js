@@ -27,6 +27,7 @@ import gql from 'graphql-tag';
 const client = new ApolloClient({
     uri: window.initialData.graphql_route
 });
+
 client.query({
     query: gql`{
         links {
@@ -35,6 +36,7 @@ client.query({
             link
         }}`
 }).then(result => console.log(result));
+
 const store = createStore(
     reducer,
     fromJS(window.initialData),
