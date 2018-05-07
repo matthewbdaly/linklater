@@ -60134,10 +60134,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var LinkInput = function (_Component) {
     _inherits(LinkInput, _Component);
 
-    function LinkInput() {
+    function LinkInput(props) {
         _classCallCheck(this, LinkInput);
 
-        return _possibleConstructorReturn(this, (LinkInput.__proto__ || Object.getPrototypeOf(LinkInput)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (LinkInput.__proto__ || Object.getPrototypeOf(LinkInput)).call(this, props));
+
+        _this.inputRef = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createRef();
+        return _this;
     }
 
     _createClass(LinkInput, [{
@@ -60151,7 +60154,7 @@ var LinkInput = function (_Component) {
                     { htmlFor: 'url', className: 'control-label' },
                     'URL'
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'url', name: 'url', placeholder: 'Page to save', className: 'form-control', required: true, autoComplete: 'off' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'url', name: 'url', placeholder: 'Page to save', className: 'form-control', required: true, autoComplete: 'off', ref: this.inputRef }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'button',
                     { type: 'submit', className: 'btn btn-primary' },
