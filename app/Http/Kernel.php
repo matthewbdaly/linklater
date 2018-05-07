@@ -50,6 +50,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Illuminate\Auth\Middleware\Authenticate::class,
+            \Barryvdh\Cors\HandleCors::class,
         ],
     ];
 
