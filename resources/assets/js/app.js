@@ -25,7 +25,7 @@ import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
 
 const client = new ApolloClient({
-    uri: window.graphql_route
+    uri: window.initialData.graphql_route
 });
 client.query({
     query: gql`{
