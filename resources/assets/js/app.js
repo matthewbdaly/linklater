@@ -23,9 +23,28 @@ import {Provider} from 'react-redux';
 import {fromJS} from 'immutable';
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
+import { createHttpLink } from 'apollo-link-http';
+import { setContext } from 'apollo-link-context';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
+const httpLink = createHttpLink({
+    uri: window.initialData.graphql_route
+});
+
+const authLink = setContext((_, { headers }) => {
+    const token = window.initialData.jwt;
+    // return the headers to the context so httpLink can read them
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : "",
+        }
+    }
+});
 
 const client = new ApolloClient({
-    uri: window.initialData.graphql_route
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache()
 });
 
 client.query({
