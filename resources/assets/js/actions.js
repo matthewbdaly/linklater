@@ -12,6 +12,20 @@ export function addLink(title, link) {
     };
 }
 
+/*
+export function createLink(link) {
+    client.query({
+        query: gql`mutation links {
+              createLink(
+                link:"http://example.com"
+                    ) {
+                      title
+                          link
+                            }
+                            }
+}
+*/
+
 export function getLinks() {
     client.query({
         query: gql`{
