@@ -21,19 +21,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
 import {fromJS} from 'immutable';
-import client from './client';
 import thunk from 'redux-thunk';
-
-/*
-client.query({
-    query: gql`{
-        links {
-            id
-            title
-            link
-        }}`
-}).then(result => console.log(result));
-*/
 
 const store = createStore(
     reducer,
