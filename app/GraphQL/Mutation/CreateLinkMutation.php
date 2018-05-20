@@ -7,6 +7,7 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
 use LinkLater\Contracts\Repositories\Link;
+use LinkLater\Contracts\Services\Fetcher;
 use Illuminate\Contracts\Auth\Guard;
 
 class CreateLinkMutation extends Mutation
@@ -16,10 +17,11 @@ class CreateLinkMutation extends Mutation
         'description' => 'Create a link'
     ];
 
-    public function __construct(Guard $auth, Link $repository)
+    public function __construct(Guard $auth, Link $repository, Fetcher $fetcher)
     {
         $this->auth = $auth;
         $this->repository = $repository;
+        $this->fetcher = $fetcher;
     }
 
     public function type()
@@ -31,7 +33,6 @@ class CreateLinkMutation extends Mutation
     {
         return [
             'link' => ['name' => 'link', 'type' => Type::nonNull(Type::string())],
-            'title' => ['name' => 'title', 'type' => Type::nonNull(Type::string())] 
         ];
     }
 
@@ -39,7 +40,6 @@ class CreateLinkMutation extends Mutation
     {
         return [
             'link' => ['required', 'url'],
-            'title' => ['required', 'string'],
         ];
     }
 
@@ -49,6 +49,7 @@ class CreateLinkMutation extends Mutation
             return null;
         }
         $args['user_id'] = $user->id;
+        $args['title'] = $this->fetcher->fetch($args['link']);
         $link = $this->repository->create($args);
         return $link;
     }
