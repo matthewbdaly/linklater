@@ -17,11 +17,12 @@ import LinkList from './components/LinkList';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Container} from './container';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
 import {fromJS} from 'immutable';
 import client from './client';
+import thunk from 'redux-thunk';
 
 /*
 client.query({
@@ -37,7 +38,10 @@ client.query({
 const store = createStore(
     reducer,
     fromJS(window.initialData),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    compose(
+        applyMiddleware(thunk),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
 );
 
 if (document.getElementById('list')) {
