@@ -12,27 +12,38 @@ export function addLink(title, link) {
     };
 }
 
-/*
+const createLinkMutation = gql`
+    mutation links {
+        createLink(link: $link) {
+            title
+            link
+        }
+    }
+`;
+
 export function createLink(link) {
-    client.query({
-        query: gql`mutation links {
-              createLink(
-                link:"http://example.com"
-                    ) {
-                      title
-                          link
-                            }
-                            }
+    return client.mutate({
+        mutation: createLinkMutation,
+        variables: {
+            link: link
+        }
+    });
 }
-*/
 
 export function getLinks() {
-    client.query({
+    return client.query({
         query: gql`{
             links {
                 id
                 title
                 link
             }}`
-    }),then((result) => {return result});
+    });
+}
+
+export function storeLink(link) {
+    return function (dispatch) {
+        return createLink(link).then((response) => {
+        });
+    }
 }

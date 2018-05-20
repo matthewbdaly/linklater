@@ -11,10 +11,7 @@ export default class LinkInput extends Component {
         e.preventDefault();
         let link = this.inputRef.current.value.trim();
         if (link) {
-            this.props.addLink({
-                link: link,
-                title: 'New Link'
-            });
+            this.props.storeLink(link);
             this.inputRef.current.value = '';
         }
     }
