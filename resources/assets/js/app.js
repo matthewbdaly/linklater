@@ -21,21 +21,9 @@ import {createStore} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
 import {fromJS} from 'immutable';
-import ApolloClient from 'apollo-boost';
-import gql from 'graphql-tag';
-import { createHttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import client from './client';
 
-const httpLink = createHttpLink({
-    uri: window.initialData.graphql_route,
-    credentials: 'same-origin'
-});
-
-const client = new ApolloClient({
-    link: httpLink,
-    cache: new InMemoryCache()
-});
-
+/*
 client.query({
     query: gql`{
         links {
@@ -44,6 +32,7 @@ client.query({
             link
         }}`
 }).then(result => console.log(result));
+*/
 
 const store = createStore(
     reducer,
