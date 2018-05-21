@@ -1,9 +1,10 @@
-import {List, Map} from 'immutable';
+import {List, Map, fromJS} from 'immutable';
 
 export default function(state = Map(), action) {
     switch (action.type) {
         case 'ADD_LINK':
-            return state.get('links').push(action.content);
+            let links = state.get('links').push(fromJS(action.content));
+            return state.set('links', links);
         default:
             return state;
     }

@@ -2,21 +2,19 @@ import {Map} from 'immutable';
 import client from './client';
 import gql from 'graphql-tag';
 
-export function addLink(title, link) {
+export function addLink(content) {
     return {
         type: 'ADD_LINK',
-        content: {
-            title: title,
-            link: link
-        }
+        content: content
     };
 }
 
 const createLinkMutation = gql`
     mutation links ($link: String!) {
         createLink(link: $link) {
-            title
+            id
             link
+            title
         }
     }
 `;
@@ -44,6 +42,7 @@ export function getLinks() {
 export function storeLink(link) {
     return function (dispatch) {
         return createLink(link).then((response) => {
+            dispatch(addLink(response.data.createLink));
         });
     }
 }

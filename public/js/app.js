@@ -60269,7 +60269,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_tag___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_tag__);
-var _templateObject = _taggedTemplateLiteral(['\n    mutation links ($link: String!) {\n        createLink(link: $link) {\n            title\n            link\n        }\n    }\n'], ['\n    mutation links ($link: String!) {\n        createLink(link: $link) {\n            title\n            link\n        }\n    }\n']),
+var _templateObject = _taggedTemplateLiteral(['\n    mutation links ($link: String!) {\n        createLink(link: $link) {\n            id\n            link\n            title\n        }\n    }\n'], ['\n    mutation links ($link: String!) {\n        createLink(link: $link) {\n            id\n            link\n            title\n        }\n    }\n']),
     _templateObject2 = _taggedTemplateLiteral(['{\n            links {\n                id\n                title\n                link\n            }}'], ['{\n            links {\n                id\n                title\n                link\n            }}']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -60278,13 +60278,10 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 
 
-function addLink(title, link) {
+function addLink(content) {
     return {
         type: 'ADD_LINK',
-        content: {
-            title: title,
-            link: link
-        }
+        content: content
     };
 }
 
@@ -60307,7 +60304,9 @@ function getLinks() {
 
 function storeLink(link) {
     return function (dispatch) {
-        return createLink(link).then(function (response) {});
+        return createLink(link).then(function (response) {
+            dispatch(addLink(response.data.createLink));
+        });
     };
 }
 
@@ -67976,7 +67975,8 @@ var DirectiveLocation = exports.DirectiveLocation = Object.freeze({
 
     switch (action.type) {
         case 'ADD_LINK':
-            return state.get('links').push(action.content);
+            var links = state.get('links').push(Object(__WEBPACK_IMPORTED_MODULE_0_immutable__["fromJS"])(action.content));
+            return state.set('links', links);
         default:
             return state;
     }
