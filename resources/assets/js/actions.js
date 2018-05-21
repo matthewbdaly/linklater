@@ -13,7 +13,7 @@ export function addLink(title, link) {
 }
 
 const createLinkMutation = gql`
-    mutation links {
+    mutation links ($link: String!) {
         createLink(link: $link) {
             title
             link
