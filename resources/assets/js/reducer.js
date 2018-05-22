@@ -5,6 +5,8 @@ export default function(state = Map(), action) {
         case 'ADD_LINK':
             let links = state.get('links').push(fromJS(action.content));
             return state.set('links', links);
+        case 'UPDATE_FILTER':
+            return state.set('filter', fromJS(action.content));
         default:
             return state;
     }

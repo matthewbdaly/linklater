@@ -46,3 +46,10 @@ export function storeLink(link) {
         });
     }
 }
+
+export function updateFilter(content) {
+    return {
+        type: 'UPDATE_FILTER',
+        content: content
+    };
+}

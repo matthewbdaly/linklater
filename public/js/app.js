@@ -60073,7 +60073,7 @@ var Layout = function (_Component) {
                     null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__LinkInput__["a" /* default */], this.props),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Bookmarklet__["a" /* default */], this.props),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LinkFilter__["a" /* default */], null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__LinkFilter__["a" /* default */], this.props),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LinkList__["a" /* default */], this.props)
                 )
             );
@@ -60177,19 +60177,30 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var LinkFilter = function (_Component) {
     _inherits(LinkFilter, _Component);
 
-    function LinkFilter() {
+    function LinkFilter(props) {
         _classCallCheck(this, LinkFilter);
 
-        return _possibleConstructorReturn(this, (LinkFilter.__proto__ || Object.getPrototypeOf(LinkFilter)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (LinkFilter.__proto__ || Object.getPrototypeOf(LinkFilter)).call(this, props));
+
+        _this.filterRef = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createRef();
+        _this.updateFilter = _this.updateFilter.bind(_this);
+        return _this;
     }
 
     _createClass(LinkFilter, [{
+        key: 'updateFilter',
+        value: function updateFilter(e) {
+            e.preventDefault();
+            var filter = this.filterRef.current.value.trim();
+            this.props.updateFilter(filter);
+        }
+    }, {
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'form-group' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { id: 'linkfilter', placeholder: 'Filter links...', className: 'form-control' }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { id: 'linkfilter', placeholder: 'Filter links...', className: 'form-control', ref: this.filterRef, onChange: this.updateFilter }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'button',
                     { id: 'clear', className: 'btn btn-primary' },
@@ -60264,6 +60275,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["createLink"] = createLink;
 /* harmony export (immutable) */ __webpack_exports__["getLinks"] = getLinks;
 /* harmony export (immutable) */ __webpack_exports__["storeLink"] = storeLink;
+/* harmony export (immutable) */ __webpack_exports__["updateFilter"] = updateFilter;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_immutable__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_immutable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_immutable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__client__ = __webpack_require__(108);
@@ -60307,6 +60319,13 @@ function storeLink(link) {
         return createLink(link).then(function (response) {
             dispatch(addLink(response.data.createLink));
         });
+    };
+}
+
+function updateFilter(content) {
+    return {
+        type: 'UPDATE_FILTER',
+        content: content
     };
 }
 
@@ -67977,6 +67996,8 @@ var DirectiveLocation = exports.DirectiveLocation = Object.freeze({
         case 'ADD_LINK':
             var links = state.get('links').push(Object(__WEBPACK_IMPORTED_MODULE_0_immutable__["fromJS"])(action.content));
             return state.set('links', links);
+        case 'UPDATE_FILTER':
+            return state.set('filter', Object(__WEBPACK_IMPORTED_MODULE_0_immutable__["fromJS"])(action.content));
         default:
             return state;
     }

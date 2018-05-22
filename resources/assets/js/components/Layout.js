@@ -12,7 +12,7 @@ export default class Layout extends Component {
                 <form>
                     <LinkInput {...this.props} />
                     <Bookmarklet {...this.props} />
-                    <LinkFilter />
+                    <LinkFilter {...this.props} />
                     <LinkList {...this.props} />
                 </form>
             </div>

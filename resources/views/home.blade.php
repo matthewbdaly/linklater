@@ -6,7 +6,8 @@ window.initialData = {
     links: {!! $links->toJson() !!},
     createUrl: '{{ url('create') }}',
     jwt: '{{ $jwt }}',
-    graphql_route: "{{ config('app.url') }}/{{ config('graphql.prefix') }}"
+    graphql_route: "{{ config('app.url') }}/{{ config('graphql.prefix') }}",
+    filter: ''
 };
 </script>
 <div class="container">
