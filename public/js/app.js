@@ -7144,7 +7144,14 @@ var LinkList = function (_Component) {
     _createClass(LinkList, [{
         key: 'render',
         value: function render() {
-            var itemNodes = this.props.links.map(function (item) {
+            var _this2 = this;
+
+            var itemNodes = this.props.links.filter(function (item) {
+                if (!_this2.props.filter) {
+                    return true;
+                }
+                return item.title.toLowerCase().includes(_this2.props.filter.toLowerCase());
+            }).map(function (item) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LinkListItem__["a" /* default */], { key: item.id, link: item.link, title: item.title });
             });
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -58222,6 +58229,7 @@ var LinkListItem = function (_Component) {
 var Container = Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(function mapStateToProps(state) {
   return {
     links: state.get('links').toJS(),
+    filter: state.get('filter'),
     createUrl: state.get('createUrl')
   };
 }, __WEBPACK_IMPORTED_MODULE_2__actions__)(__WEBPACK_IMPORTED_MODULE_1__components_Layout__["a" /* default */]);

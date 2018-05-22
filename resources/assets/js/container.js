@@ -6,6 +6,7 @@ export const Container = connect(
   function mapStateToProps(state) {
     return {
       links: state.get('links').toJS(),
+      filter: state.get('filter'),
       createUrl: state.get('createUrl')
     };
   },
