@@ -3,7 +3,18 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import LinkListItem from './LinkListItem';
 
-export default class LinkList extends Component {
+type Link = {
+  id: string,
+  title: string,
+  link: string
+};
+
+type Props = {
+  links: Array<Link>,
+  filter: string,
+};
+
+export default class LinkList extends Component<Props> {
   render() {
     let itemNodes = this.props.links.filter((item) => {
       if (!this.props.filter) {
