@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkInput renders the link input 1`] = `
+<div
+  className="form-group"
+>
+  <label
+    className="control-label"
+    htmlFor="url"
+  >
+    URL
+  </label>
+  <input
+    autoComplete="off"
+    className="form-control"
+    name="url"
+    placeholder="Page to save"
+    required={true}
+    type="url"
+  />
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+</div>
+`;
