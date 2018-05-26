@@ -7,6 +7,7 @@ type Props = {
 };
 
 export default class LinkFilter extends Component<Props> {
+  filterRef: ?React.ElementRef<'input'>;
   constructor(props: Props) {
     super(props);
     this.filterRef = React.createRef();
