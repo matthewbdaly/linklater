@@ -3,7 +3,7 @@ import {List, Map, fromJS} from 'immutable';
 
 type Action = {
   type: string,
-  content: Map
+  content: mixed
 };
 
 export default function(state = Map(), action: Action) {
