@@ -3,7 +3,7 @@ import {Map} from 'immutable';
 import client from './client';
 import gql from 'graphql-tag';
 
-export function addLink(content) {
+export function addLink(content: string) {
   return {
     type: 'ADD_LINK',
     content: content
@@ -20,7 +20,7 @@ const createLinkMutation = gql`
     }
 `;
 
-export function createLink(link) {
+export function createLink(link: string) {
   return client.mutate({
     mutation: createLinkMutation,
     variables: {
@@ -40,7 +40,7 @@ export function getLinks() {
   });
 }
 
-export function storeLink(link) {
+export function storeLink(link: string) {
   return function (dispatch) {
     return createLink(link).then((response) => {
       dispatch(addLink(response.data.createLink));
@@ -48,7 +48,7 @@ export function storeLink(link) {
   };
 }
 
-export function updateFilter(content) {
+export function updateFilter(content: string) {
   return {
     type: 'UPDATE_FILTER',
     content: content
