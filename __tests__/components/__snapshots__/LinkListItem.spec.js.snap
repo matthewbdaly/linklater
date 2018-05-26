@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LinkListItem renders the link listitem 1`] = `
+exports[`LinkListItem renders the link list item 1`] = `
 <li
   className="list-group-item"
 >

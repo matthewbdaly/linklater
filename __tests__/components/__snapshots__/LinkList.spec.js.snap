@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkList renders the link list 1`] = `
+<ul
+  className="list-group"
+  id="links"
+/>
+`;
