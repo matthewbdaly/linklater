@@ -6,7 +6,21 @@ import LinkInput from './LinkInput';
 import LinkFilter from './LinkFilter';
 import Bookmarklet from './Bookmarklet';
 
-export default class Layout extends Component {
+type Link = {
+  id: string,
+  title: string,
+  link: string
+};
+
+type Props = {
+  links: Array<Link>,
+  createUrl: string,
+  jwt: string,
+  graphql_route: string,
+  filter: string
+};
+
+export default class Layout extends Component<Props> {
   render() {
     return (
       <div>
