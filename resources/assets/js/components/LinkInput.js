@@ -2,8 +2,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export default class LinkInput extends Component {
-  constructor(props) {
+type Props = {
+};
+
+export default class LinkInput extends Component<Props> {
+  constructor(props: Props) {
     super(props);
     this.inputRef = React.createRef();
     this.submitLink = this.submitLink.bind(this);
