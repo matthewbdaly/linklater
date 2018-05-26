@@ -2,7 +2,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Bookmarklet extends Component {
+type Props = {
+  createUrl: string
+};
+
+export default class Bookmarklet extends Component<Props> {
   render() {
     let url = `javascript:location.href='${this.props.createUrl}?url='+encodeURIComponent(location.href)`;
     return (
