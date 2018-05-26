@@ -3,12 +3,12 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const httpLink = createHttpLink({
-    uri: window.initialData.graphql_route,
-    credentials: 'same-origin'
+  uri: window.initialData.graphql_route,
+  credentials: 'same-origin'
 });
 
 export default new ApolloClient({
-    link: httpLink,
-    cache: new InMemoryCache()
+  link: httpLink,
+  cache: new InMemoryCache()
 });
 

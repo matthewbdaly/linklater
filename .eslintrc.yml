@@ -1,0 +1,32 @@
+rules:
+  no-debugger:
+    - 0
+  no-console:
+    - 0
+  no-unused-vars:
+    - 0
+  indent:
+    - 2
+    - 2
+  quotes:
+    - 2
+    - single
+  linebreak-style:
+    - 2
+    - unix
+  semi:
+    - 2
+    - always
+env:
+  es6: true
+  browser: true
+  node: true
+extends: 'eslint:recommended'
+parserOptions:
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+    experimentalObjectRestSpread: true
+    modules: true
+plugins:
+  - react

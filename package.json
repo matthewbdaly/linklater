@@ -9,7 +9,7 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "test": "jest --coverage",
-        "lint": "eslint js/",
+        "lint": "eslint resources/assets/js/",
         "flow": "flow"
     },
     "devDependencies": {
@@ -20,6 +20,7 @@
         "bootstrap-sass": "^3.3.7",
         "cross-env": "^5.1",
         "eslint": "^4.19.1",
+        "eslint-plugin-react": "^7.8.2",
         "flow-bin": "^0.73.0",
         "graphql": "^0.13.2",
         "graphql-tag": "^2.9.2",

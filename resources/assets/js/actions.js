@@ -3,10 +3,10 @@ import client from './client';
 import gql from 'graphql-tag';
 
 export function addLink(content) {
-    return {
-        type: 'ADD_LINK',
-        content: content
-    };
+  return {
+    type: 'ADD_LINK',
+    content: content
+  };
 }
 
 const createLinkMutation = gql`
@@ -20,36 +20,36 @@ const createLinkMutation = gql`
 `;
 
 export function createLink(link) {
-    return client.mutate({
-        mutation: createLinkMutation,
-        variables: {
-            link: link
-        }
-    });
+  return client.mutate({
+    mutation: createLinkMutation,
+    variables: {
+      link: link
+    }
+  });
 }
 
 export function getLinks() {
-    return client.query({
-        query: gql`{
+  return client.query({
+    query: gql`{
             links {
                 id
                 title
                 link
             }}`
-    });
+  });
 }
 
 export function storeLink(link) {
-    return function (dispatch) {
-        return createLink(link).then((response) => {
-            dispatch(addLink(response.data.createLink));
-        });
-    }
+  return function (dispatch) {
+    return createLink(link).then((response) => {
+      dispatch(addLink(response.data.createLink));
+    });
+  };
 }
 
 export function updateFilter(content) {
-    return {
-        type: 'UPDATE_FILTER',
-        content: content
-    };
+  return {
+    type: 'UPDATE_FILTER',
+    content: content
+  };
 }

@@ -25,18 +25,18 @@ import {fromJS} from 'immutable';
 import thunk from 'redux-thunk';
 
 const store = createStore(
-    reducer,
-    fromJS(window.initialData),
-    composeWithDevTools(
-        applyMiddleware(thunk)
-    )
+  reducer,
+  fromJS(window.initialData),
+  composeWithDevTools(
+    applyMiddleware(thunk)
+  )
 );
 
 if (document.getElementById('list')) {
-    ReactDOM.render(
-        <Provider store={store}>
-            <Container />
-        </Provider>,
-        document.getElementById('list')
-    );
+  ReactDOM.render(
+    <Provider store={store}>
+      <Container />
+    </Provider>,
+    document.getElementById('list')
+  );
 }
