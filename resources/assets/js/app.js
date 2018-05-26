@@ -17,7 +17,8 @@ import LinkList from './components/LinkList';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Container} from './container';
-import {createStore, applyMiddleware, compose} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
 import {fromJS} from 'immutable';
@@ -26,9 +27,8 @@ import thunk from 'redux-thunk';
 const store = createStore(
     reducer,
     fromJS(window.initialData),
-    compose(
-        applyMiddleware(thunk),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composeWithDevTools(
+        applyMiddleware(thunk)
     )
 );
 
