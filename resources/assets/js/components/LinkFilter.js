@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default class LinkFilter extends Component<Props> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.filterRef = React.createRef();
     this.updateFilter = this.updateFilter.bind(this);
