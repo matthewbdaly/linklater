@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 type Props = {
+  storeLink: (link: string) => void
 };
 
 export default class LinkInput extends Component<Props> {

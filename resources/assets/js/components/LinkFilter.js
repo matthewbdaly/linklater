@@ -2,13 +2,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export default class LinkFilter extends Component {
+type Props = {
+  updateFilter: (filter: string) => void
+};
+
+export default class LinkFilter extends Component<Props> {
   constructor(props) {
     super(props);
     this.filterRef = React.createRef();
     this.updateFilter = this.updateFilter.bind(this);
   }
-  updateFilter(e) {
+  updateFilter(e: SyntheticEvent<HTMLInputElement>) {
     e.preventDefault();
     let filter = this.filterRef.current.value.trim();
     this.props.updateFilter(filter);
