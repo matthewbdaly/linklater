@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout renders the layout 1`] = `
+<div>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        className="control-label"
+        htmlFor="url"
+      >
+        URL
+      </label>
+      <input
+        autoComplete="off"
+        className="form-control"
+        name="url"
+        placeholder="Page to save"
+        required={true}
+        type="url"
+      />
+      <button
+        className="btn btn-primary"
+        onClick={[Function]}
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+    <p
+      className="bookmarklet"
+    >
+      <a
+        href="javascript:location.href='?url='+encodeURIComponent(location.href)"
+      >
+        LinkLater This!
+      </a>
+    </p>
+    <div
+      className="form-group"
+    >
+      <input
+        className="form-control"
+        id="linkfilter"
+        onChange={[Function]}
+        placeholder="Filter links..."
+      />
+      <button
+        className="btn btn-primary"
+        id="clear"
+      >
+        Clear filter
+      </button>
+    </div>
+    <ul
+      className="list-group"
+      id="links"
+    />
+  </form>
+</div>
+`;
