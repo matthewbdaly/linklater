@@ -8,6 +8,7 @@ type Props = {
 
 export default class LinkInput extends Component<Props> {
   inputRef: ?React.ElementRef<'input'>;
+  submitLink: () => void;
   constructor(props: Props) {
     super(props);
     this.inputRef = React.createRef();
