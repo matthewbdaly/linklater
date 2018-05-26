@@ -24,12 +24,10 @@ export default class Layout extends Component<Props> {
   render() {
     return (
       <div>
-        <form>
-          <LinkInput {...this.props} />
-          <Bookmarklet {...this.props} />
-          <LinkFilter {...this.props} />
-          <LinkList {...this.props} />
-        </form>
+        <LinkInput {...this.props} />
+        <Bookmarklet {...this.props} />
+        <LinkFilter {...this.props} />
+        <LinkList {...this.props} />
       </div>
     );
   }
