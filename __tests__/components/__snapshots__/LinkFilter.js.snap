@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkFilter renders the link filter 1`] = `
+<div
+  className="form-group"
+>
+  <input
+    className="form-control"
+    id="linkfilter"
+    onChange={[Function]}
+    placeholder="Filter links..."
+  />
+  <button
+    className="btn btn-primary"
+    id="clear"
+  >
+    Clear filter
+  </button>
+</div>
+`;
