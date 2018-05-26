@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bookmarklet renders the bookmarklet 1`] = `
+<p
+  className="bookmarklet"
+>
+  <a
+    href="javascript:location.href='undefined?url='+encodeURIComponent(location.href)"
+  >
+    LinkLater This!
+  </a>
+</p>
+`;
