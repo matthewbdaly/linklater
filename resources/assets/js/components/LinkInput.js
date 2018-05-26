@@ -8,7 +8,7 @@ export default class LinkInput extends Component {
     this.inputRef = React.createRef();
     this.submitLink = this.submitLink.bind(this);
   }
-  submitLink(e) {
+  submitLink(e: SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
     let link = this.inputRef.current.value.trim();
     if (link) {
