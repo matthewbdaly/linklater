@@ -1,7 +1,12 @@
 // @flow
 import {List, Map, fromJS} from 'immutable';
 
-export default function(state = Map(), action) {
+type Action = {
+  type: string,
+  content: Map
+};
+
+export default function(state = Map(), action: Action) {
   switch (action.type) {
   case 'ADD_LINK': {
     let links = state.get('links').push(fromJS(action.content));
