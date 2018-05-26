@@ -1,3 +1,4 @@
+// @flow
 import {Map} from 'immutable';
 import client from './client';
 import gql from 'graphql-tag';

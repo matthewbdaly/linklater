@@ -1,3 +1,4 @@
+// @flow
 import ApolloClient from 'apollo-boost';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';

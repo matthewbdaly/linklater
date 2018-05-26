@@ -1,3 +1,4 @@
+// @flow
 import {List, Map, fromJS} from 'immutable';
 
 export default function(state = Map(), action) {
