@@ -13,6 +13,7 @@ exports[`LinkFilter renders the link filter 1`] = `
   <button
     className="btn btn-primary"
     id="clear"
+    onClick={[Function]}
   >
     Clear filter
   </button>
