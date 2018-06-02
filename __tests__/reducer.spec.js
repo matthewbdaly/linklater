@@ -1,5 +1,5 @@
 import reducer from '../resources/assets/js/reducer';
-import {Map, fromJS} from 'immutable';
+import {List,Map,fromJS} from 'immutable';
 
 describe('Reducer', () => {
   it('handles default path', () => {
@@ -10,6 +10,21 @@ describe('Reducer', () => {
     const nextState = reducer(initialState, action);
 
     expect(nextState).toEqual(fromJS({
+    }));
+  });
+
+  it('handles ADD_LINK', () => {
+    const initialState = Map({
+      links: List()
+    });
+    const action = {
+      type: 'ADD_LINK',
+      content: 'Foo'
+    };
+    const nextState = reducer(initialState, action);
+
+    expect(nextState).toEqual(fromJS({
+      links: ['Foo']
     }));
   });
 
