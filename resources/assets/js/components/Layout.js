@@ -17,7 +17,9 @@ type Props = {
   createUrl: string,
   jwt: string,
   graphql_route: string,
-  filter: string
+  filter: string,
+  storeLink: (link: string) => void,
+  updateFilter: (filter: string) => void
 };
 
 export default class Layout extends Component<Props> {
