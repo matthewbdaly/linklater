@@ -1,8 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LinkList renders a non-empty list 1`] = `
+<ul
+  className="list-group"
+  id="links"
+>
+  <li
+    className="list-group-item"
+  >
+    <a
+      href="http://example.com"
+      target="_blank"
+    >
+      My link
+    </a>
+  </li>
+</ul>
+`;
+
 exports[`LinkList renders the link list 1`] = `
 <ul
   className="list-group"
   id="links"
-/>
+>
+  <li
+    className="list-group-item"
+  >
+    <a
+      href="http://example.com"
+      target="_blank"
+    >
+      My link
+    </a>
+  </li>
+  <li
+    className="list-group-item"
+  >
+    <a
+      href="https://example.com"
+      target="_blank"
+    >
+      Something else
+    </a>
+  </li>
+</ul>
 `;
