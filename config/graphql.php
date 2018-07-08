@@ -53,7 +53,7 @@ return [
     /*
      * Any middleware for the 'graphql' route group
      */
-    'middleware' => ['graphql'],
+    'middleware' => ['graphql','jwt.auth'],
 
     /**
      * Any middleware for a specific 'graphql' schema
