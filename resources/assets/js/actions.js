@@ -3,6 +3,7 @@ import {Map} from 'immutable';
 import client from './client';
 import gql from 'graphql-tag';
 import type {Dispatch} from 'redux';
+import type {Action} from './types';
 
 export function addLink(content: string) {
   return {
@@ -42,7 +43,7 @@ export function getLinks() {
 }
 
 export function storeLink(link: string) {
-  return function (dispatch: Dispatch) {
+  return function (dispatch: Dispatch<Action>) {
     return createLink(link).then((response) => {
       dispatch(addLink(response.data.createLink));
     });
