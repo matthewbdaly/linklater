@@ -1,14 +1,15 @@
 // @flow
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import type {createRef} from 'react';
 
 type Props = {
   updateFilter: (filter: string) => void
 };
 
 export default class LinkFilter extends Component<Props> {
-  filterRef: ?React.createRef<'input'>;
-  clearRef: ?React.createRef<'button'>;
+  filterRef: ?createRef<'input'>;
+  clearRef: ?createRef<'button'>;
   updateFilter: () => void;
   clearFilter: () => void;
   constructor(props: Props) {

@@ -1,13 +1,14 @@
 // @flow
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import type {createRef} from 'react';
 
 type Props = {
   storeLink: (link: string) => void
 };
 
 export default class LinkInput extends Component<Props> {
-  inputRef: ?React.createRef<'input'>;
+  inputRef: ?createRef<'input'>;
   submitLink: () => void;
   constructor(props: Props) {
     super(props);
