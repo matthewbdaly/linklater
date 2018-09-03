@@ -2,7 +2,7 @@
 import {List, Map, fromJS} from 'immutable';
 import type {Action} from './types';
 
-export default function(state = Map(), action: Action) {
+export default function(state: Map<string, mixed> = Map(), action: Action) {
   switch (action.type) {
   case 'ADD_LINK': {
     let links = state.get('links').push(fromJS(action.content));

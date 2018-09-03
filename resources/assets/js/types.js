@@ -1,4 +1,4 @@
 export type Action = {
-  type: string,
+  type: 'ADD_LINK' | 'UPDATE_FILTER',
   content: mixed
 };
