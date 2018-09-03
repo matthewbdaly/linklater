@@ -7,8 +7,8 @@ type Props = {
 };
 
 export default class LinkFilter extends Component<Props> {
-  filterRef: ?React.ElementRef<'input'>;
-  clearRef: ?React.ElementRef<'button'>;
+  filterRef: ?React.createRef<'input'>;
+  clearRef: ?React.createRef<'button'>;
   updateFilter: () => void;
   clearFilter: () => void;
   constructor(props: Props) {
