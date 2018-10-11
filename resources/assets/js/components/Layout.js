@@ -5,6 +5,7 @@ import LinkList from './LinkList';
 import LinkInput from './LinkInput';
 import LinkFilter from './LinkFilter';
 import Bookmarklet from './Bookmarklet';
+import ErrorBoundary from './ErrorBoundary';
 
 type Link = {
   id: string,
@@ -26,10 +27,12 @@ export default class Layout extends Component<Props> {
   render() {
     return (
       <div>
-        <LinkInput {...this.props} />
-        <Bookmarklet {...this.props} />
-        <LinkFilter {...this.props} />
-        <LinkList {...this.props} />
+        <ErrorBoundary>
+          <LinkInput {...this.props} />
+          <Bookmarklet {...this.props} />
+          <LinkFilter {...this.props} />
+          <LinkList {...this.props} />
+        </ErrorBoundary>
       </div>
     );
   }
