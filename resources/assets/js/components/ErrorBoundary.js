@@ -1,8 +1,9 @@
 //@flow
 import React, { Component } from 'react';
+import type { Node } from 'react';
 
 type Props = {
-  children?: React.Node
+  children?: Node
 }
 
 type State = {
