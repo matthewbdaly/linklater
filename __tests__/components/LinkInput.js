@@ -15,13 +15,4 @@ describe('LinkInput', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  it('handles submit', () => {
-    const store = jest.fn();
-    const wrapper = mount(<LinkInput storeLink={store} />);
-    wrapper.find('button').simulate('click', {
-      preventDefault: () => {
-    }});
-    expect(store).toBeCalled();
-  });
 });
