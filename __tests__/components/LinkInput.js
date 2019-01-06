@@ -19,9 +19,10 @@ describe('LinkInput', () => {
   it('handles submit', () => {
     const store = jest.fn();
     const wrapper = mount(<LinkInput storeLink={store} />);
+    wrapper.find('input').instance().value = 'Hello';
     wrapper.find('button').simulate('click', {
       preventDefault: () => {
     }});
-    expect(store).toBeCalled();
+    expect(store).toBeCalledWith('Hello');
   });
 });
