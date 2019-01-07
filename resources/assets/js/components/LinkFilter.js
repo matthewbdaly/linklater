@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import type {createRef} from 'react';
 
 type Props = {
