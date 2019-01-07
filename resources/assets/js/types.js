@@ -1,3 +1,4 @@
+//@flow
 import type {List} from 'immutable';
 
 export opaque type Action = {

@@ -21,7 +21,9 @@ env:
   es6: true
   browser: true
   node: true
-extends: 'eslint:recommended'
+extends:
+ - 'eslint:recommended'
+ - 'plugin:flowtype/recommended'
 parserOptions:
   sourceType: module
   ecmaFeatures:
@@ -30,3 +32,4 @@ parserOptions:
     modules: true
 plugins:
   - react
+  - flowtype
