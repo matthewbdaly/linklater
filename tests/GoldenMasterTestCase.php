@@ -1,11 +1,11 @@
 <?php
 
+namespace Tests;
+
 use Tests\BrowserTestCase;
 
 class GoldenMasterTestCase extends BrowserTestCase
 {
-    use CreatesApplication;
-
     protected $snapshotDir = "tests/snapshots/";
 
     public function loginAs($username, $password)
@@ -20,8 +20,8 @@ class GoldenMasterTestCase extends BrowserTestCase
 
     public function goto($path)
     {
-        $this->session->visit($this->baseUrl.$path);
-        $this->assertNotEquals(404, $this->session->getStatusCode());
+        $response = $this->call('GET', $path);
+        $this->assertNotEquals(404, $response->status());
         return $this;
     }
 

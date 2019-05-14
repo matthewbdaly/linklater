@@ -9,7 +9,6 @@ class ExampleTest extends GoldenMasterTestCase
 {
     public function testNonAuthPages()
     {
-        eval(\Psy\Sh());
         $this->goto('/');
     }
 }
