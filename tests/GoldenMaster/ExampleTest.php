@@ -10,7 +10,7 @@ class ExampleTest extends GoldenMasterTestCase
     use RefreshDatabase;
 
     /**
-     * @dataProvider dataProvider
+     * @dataProvider nonAuthDataProvider
      */
     public function testNonAuthPages($data)
     {
@@ -19,7 +19,7 @@ class ExampleTest extends GoldenMasterTestCase
             ->assertSnapshotsMatch();
     }
 
-    public function dataProvider()
+    public function nonAuthDataProvider()
     {
         return [
             ['/'],
