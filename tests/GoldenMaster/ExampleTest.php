@@ -7,8 +7,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends GoldenMasterTestCase
 {
+    use RefreshDatabase;
+
     /**
-        * @dataProvider dataProvider
+     * @dataProvider dataProvider
      */
     public function testNonAuthPages($data)
     {
