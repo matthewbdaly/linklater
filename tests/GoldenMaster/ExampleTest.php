@@ -9,6 +9,8 @@ class ExampleTest extends GoldenMasterTestCase
 {
     public function testNonAuthPages()
     {
-        $this->goto('/');
+        $this->goto('/')
+            ->saveHtml()
+            ->assertSnapshotsMatch();
     }
 }

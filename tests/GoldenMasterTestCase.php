@@ -8,6 +8,10 @@ class GoldenMasterTestCase extends BrowserTestCase
 {
     protected $snapshotDir = "tests/snapshots/";
 
+    protected $response;
+
+    protected $path;
+
     public function loginAs($username, $password)
     {
         $this->session->visit($this->baseUrl.'/login');
@@ -20,7 +24,9 @@ class GoldenMasterTestCase extends BrowserTestCase
 
     public function goto($path)
     {
+        $this->path = $path;
         $response = $this->call('GET', $path);
+        $this->response = $response;
         $this->assertNotEquals(404, $response->status());
         return $this;
     }
@@ -48,16 +54,12 @@ class GoldenMasterTestCase extends BrowserTestCase
 
     protected function getHtml()
     {
-        return $this->session->getPage()->getHtml();
+        return $this->response->getContent();
     }
 
     protected function getPath()
     {
-        $url = $this->session->getCurrentUrl();
-        $path = parse_url($url, PHP_URL_PATH);
-        $query = parse_url($url, PHP_URL_QUERY);
-        $frag = parse_url($url, PHP_URL_FRAGMENT);
-        return $path.$query.$frag;
+        return $this->path;
     }
 
     protected function getEscapedPath()
