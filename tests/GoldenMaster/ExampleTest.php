@@ -7,10 +7,21 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends GoldenMasterTestCase
 {
-    public function testNonAuthPages()
+    /**
+        * @dataProvider dataProvider
+     */
+    public function testNonAuthPages($data)
     {
-        $this->goto('/')
+        $this->goto($data)
             ->saveHtml()
             ->assertSnapshotsMatch();
+    }
+
+    public function dataProvider()
+    {
+        return [
+            ['/'],
+            ['/login'],
+        ];
     }
 }

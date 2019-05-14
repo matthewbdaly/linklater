@@ -74,7 +74,7 @@ class GoldenMasterTestCase extends BrowserTestCase
 
     protected function processHtml($html)
     {
-        return preg_replace('/<input type="hidden"[^>]+\>/i', '', $html);
+        return preg_replace('/(<input type="hidden"[^>]+\>|<meta name="csrf-token" content="([a-zA-Z0-9]+)">)/i', '', $html);
     }
 
     protected function saveSnapshot()
