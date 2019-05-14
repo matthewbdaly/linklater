@@ -1,12 +1,90 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="refresh" content="0;url=http://localhost/login" />
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Redirecting to http://localhost/login</title>
-    </head>
-    <body>
-        Redirecting to <a href="http://localhost/login">http://localhost/login</a>.
-    </body>
+    <!-- CSRF Token -->
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <title>Laravel</title>
+
+    <!-- Styles -->
+    <link href="http://localhost/css/app.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Branding Image -->
+                    <a class="navbar-brand" href="http://localhost">
+                        Laravel
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                                                    <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    Eric Smith <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="http://localhost/logout"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="http://localhost/logout" method="POST" style="display: none;">
+                                            
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+    <div class="jumbotron">
+        <h1><a href="/">LinkLater</a></h1>
+        <h2>Save your links for later</h2>
+    </div>
+</div>
+
+        <footer>
+            <div class="container">
+                <div class="col-md-12">
+                    <p>Copyright &copy; Matthew Daly 2018. Photo by Anete Lūsiņa on Unsplash</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="http://localhost/js/app.js"></script>
+</body>
 </html>

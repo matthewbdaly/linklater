@@ -4,6 +4,7 @@ namespace Tests\GoldenMaster;
 
 use Tests\GoldenMasterTestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use LinkLater\Eloquent\Models\User;
 
 class ExampleTest extends GoldenMasterTestCase
 {
@@ -14,7 +15,13 @@ class ExampleTest extends GoldenMasterTestCase
      */
     public function testAuthPages($data)
     {
-        $this->goto($data)
+        $user = factory(User::class)->create([
+            'email' => 'eric@example.com',
+            'name' => 'Eric Smith',
+            'password' => 'password'
+        ]);
+        $this->actingAs($user)
+            ->goto($data)
             ->saveHtml()
             ->assertSnapshotsMatch();
     }
@@ -33,7 +40,6 @@ class ExampleTest extends GoldenMasterTestCase
     {
         return [
             ['/'],
-            ['/home'],
         ];
     }
 
