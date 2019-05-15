@@ -2,7 +2,7 @@
 
 namespace Tests\GoldenMaster;
 
-use Tests\GoldenMasterTestCase;
+use Matthewbdaly\LaravelGoldenMasterTests\GoldenMasterTestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LinkLater\Eloquent\Models\User;
 
