@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import LinkList from './LinkList';
 import LinkInput from './LinkInput';
@@ -23,17 +23,17 @@ type Props = {
   updateFilter: (filter: string) => void
 };
 
-export default class Layout extends Component<Props> {
-  render() {
-    return (
-      <div>
-        <ErrorBoundary>
-          <LinkInput {...this.props} />
-          <Bookmarklet {...this.props} />
-          <LinkFilter {...this.props} />
-          <LinkList {...this.props} />
-        </ErrorBoundary>
-      </div>
-    );
-  }
-}
+const Layout = (props: Props) => {
+  return (
+    <div>
+      <ErrorBoundary>
+        <LinkInput {...props} />
+        <Bookmarklet {...props} />
+        <LinkFilter {...props} />
+        <LinkList {...props} />
+      </ErrorBoundary>
+    </div>
+  );
+};
+
+export default Layout;

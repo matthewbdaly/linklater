@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import LinkListItem from './LinkListItem';
 
 type Link = {
@@ -13,20 +13,20 @@ type Props = {
   filter: string,
 };
 
-export default class LinkList extends Component<Props> {
-  render() {
-    let itemNodes = this.props.links.filter((item) => {
-      if (!this.props.filter) {
-        return true;
-      }
-      return item.title.toLowerCase().includes(this.props.filter.toLowerCase());
-    }).map((item) => {
-      return <LinkListItem key={item.id} link={item.link} title={item.title} />;
-    });
-    return (
-      <ul id="links" className="list-group">
-        {itemNodes}
-      </ul>
-    );
-  }
-}
+const LinkList = (props: Props) => {
+  let itemNodes = props.links.filter((item) => {
+    if (!props.filter) {
+      return true;
+    }
+    return item.title.toLowerCase().includes(props.filter.toLowerCase());
+  }).map((item) => {
+    return <LinkListItem key={item.id} link={item.link} title={item.title} />;
+  });
+  return (
+    <ul id="links" className="list-group">
+      {itemNodes}
+    </ul>
+  );
+};
+
+export default LinkList;

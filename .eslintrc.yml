@@ -24,6 +24,7 @@ env:
 extends:
  - 'eslint:recommended'
  - 'plugin:flowtype/recommended'
+ - 'plugin:react/recommended'
 parserOptions:
   sourceType: module
   ecmaFeatures:

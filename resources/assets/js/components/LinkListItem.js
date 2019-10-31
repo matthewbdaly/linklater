@@ -1,17 +1,17 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 
 type Props = {
   link: string,
   title: string
 };
 
-export default class LinkListItem extends Component<Props> {
-  render(){
-    return (
-      <li className="list-group-item">
-        <a href={ this.props.link } target="_blank">{ this.props.title }</a>
-      </li>
-    );
-  }
-}
+const LinkListItem = (props: Props) => {
+  return (
+    <li className="list-group-item">
+      <a href={ props.link } target="_blank" rel="noopener noreferrer">{ props.title }</a>
+    </li>
+  );
+};
+
+export default LinkListItem;
