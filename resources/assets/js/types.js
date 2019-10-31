@@ -6,7 +6,7 @@ export opaque type Action = {
   content: mixed
 };
 
-export type Link = {
+export opaque type Link = {
   id: ?string,
   title: string,
   link: string
