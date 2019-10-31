@@ -13,7 +13,7 @@ export type Link = {
 };
 
 export opaque type StateMap = {
-  links: List,
+  links: List<Link>,
   filter: string,
   createUrl: string
 }
