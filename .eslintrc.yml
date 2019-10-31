@@ -34,3 +34,6 @@ parserOptions:
 plugins:
   - react
   - flowtype
+settings:
+  react:
+    version: detect
