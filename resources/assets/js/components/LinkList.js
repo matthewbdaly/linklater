@@ -1,12 +1,7 @@
 // @flow
 import React from 'react';
 import LinkListItem from './LinkListItem';
-
-type Link = {
-  id: string,
-  title: string,
-  link: string
-};
+import type { Link } from '../types';
 
 type Props = {
   links: Array<Link>,

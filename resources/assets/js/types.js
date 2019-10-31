@@ -6,6 +6,12 @@ export opaque type Action = {
   content: mixed
 };
 
+export type Link = {
+  id: ?string,
+  title: string,
+  link: string
+};
+
 export opaque type StateMap = {
   links: List,
   filter: string,
