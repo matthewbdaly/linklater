@@ -1,6 +1,6 @@
 // @flow
 import {List, Map, fromJS} from 'immutable';
-import type {Action, StateMap} from './types';
+import type {Action, StateMap} from './Types';
 
 export default function(state: StateMap = Map(), action: Action) {
   switch (action.type) {

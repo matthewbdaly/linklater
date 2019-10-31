@@ -6,12 +6,7 @@ import LinkInput from './LinkInput';
 import LinkFilter from './LinkFilter';
 import Bookmarklet from './Bookmarklet';
 import ErrorBoundary from './ErrorBoundary';
-
-type Link = {
-  id: string,
-  title: string,
-  link: string
-};
+import type { Link } from '../Types';
 
 type Props = {
   links: Array<Link>,

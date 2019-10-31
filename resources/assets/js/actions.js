@@ -3,9 +3,9 @@ import {Map} from 'immutable';
 import client from './client';
 import gql from 'graphql-tag';
 import type {Dispatch} from 'redux';
-import type {Action} from './types';
+import type {Action} from './Types';
 
-export function addLink(content: string) {
+export function addLink(content: string): Action {
   return {
     type: 'ADD_LINK',
     content: content
@@ -50,7 +50,7 @@ export function storeLink(link: string) {
   };
 }
 
-export function updateFilter(content: string) {
+export function updateFilter(content: string): Action {
   return {
     type: 'UPDATE_FILTER',
     content: content

@@ -1,12 +1,8 @@
 // @flow
 import React from 'react';
+import type { Link } from '../Types';
 
-type Props = {
-  link: string,
-  title: string
-};
-
-const LinkListItem = (props: Props) => {
+const LinkListItem = (props: Link) => {
   return (
     <li className="list-group-item">
       <a href={ props.link } target="_blank" rel="noopener noreferrer">{ props.title }</a>
